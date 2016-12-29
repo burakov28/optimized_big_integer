@@ -3,7 +3,7 @@
 
 #include <iosfwd>
 #include <vector>
-#include "optimized_vector.cpp"
+#include "optimized_vector.h"
 
 struct big_integer
 {

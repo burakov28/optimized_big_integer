@@ -14,23 +14,7 @@ int const dec_base = (int) 1e9;
 int const dec_base_log = 9;
 int const base_log = 30;
 int const base = (1 << 30);
-
-const int MAX_MEM = (int) 240 * 1024 * 1024;
-
-int mpos, max_mpos;
-char memory[MAX_MEM];
-
-inline void * operator new (size_t n) {
-    char *res = memory + mpos;
-    mpos += n;
-    assert(mpos <= MAX_MEM);
-    return (void *)res; 
-}
-
-inline void operator delete (void *) { }
-
-
-
+                            
 
 void del_zeros(big_integer & a) {
     while (a.line.size() > 1 && a.line.back() == 0) a.line.pop_back();
